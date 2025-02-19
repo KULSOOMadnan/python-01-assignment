@@ -68,14 +68,14 @@ if upload_files:
                                'Csv', "Excel"], key=file.name)
     if st.button(f'Convert {file.name}'):
         buffer = BytesIO()
-        if conversion_type == "CSV":
+        if conversion_type == "Csv":
             df.to_csv(buffer, index=False)
             file_name = file.name.replace(files_ext, '.csv')
             mime_type = 'text/csv'
 
         elif conversion_type == "Excel":
             df.to_csv(buffer, index=False)
-            file_name = file.name.replace(files_ext, '.xlxs')
+            file_name = file.name.replace(files_ext, '.xlsx')
             mime_type = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
         buffer.seek(0)
 
