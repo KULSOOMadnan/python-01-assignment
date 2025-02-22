@@ -11,6 +11,8 @@ import google.generativeai as gen_ai
 load_dotenv()
 
 # Function to get a random motivational quote
+
+
 def get_random_quote():
     quotes = [
         "Believe you can and you're halfway there.",
@@ -21,14 +23,16 @@ def get_random_quote():
     ]
     return random.choice(quotes)
 
+
 # Set up App Configuration
-st.set_page_config(page_title='Data Sweeper - Mind Growth Village', layout='wide' , page_icon='🌿')
+st.set_page_config(
+    page_title='Data Sweeper - Mind Growth Village', layout='wide', page_icon='🌿')
 
 # Sidebar Navigation # Add a logo (replace URL)
 st.sidebar.title("📂 Mind Growth")
 
 page = st.sidebar.radio("Go to:", [
-    "🏠 Home", 
+    "🏠 Home",
     "🤖 AI Chatbot",
     "📂 Data Sweeper",
     "📝 To-Do List",
@@ -72,7 +76,7 @@ page = st.sidebar.radio("Go to:", [
 #         </style>
 #     """, unsafe_allow_html=True)
 
-   
+
 #     # Homepage Content
 #     st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🌱 Welcome to MindGrowth Village 🚀</h1>", unsafe_allow_html=True)
 
@@ -80,7 +84,7 @@ page = st.sidebar.radio("Go to:", [
 #     st.write("At **MindGrowth Village**, we believe in continuous learning and self-improvement. Whether you’re looking for daily motivation, challenges, or success stories, you’ve come to the right place.")
 
 #     st.write("---")
-    
+
 #      # Motivational Quotes
 #     quotes = [
 #         ("Your only limit is your mind.", "Anonymous"),
@@ -155,7 +159,8 @@ if page == "🏠 Home":
     """, unsafe_allow_html=True)
 
     # Homepage Content
-    st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🌱 Welcome to MindGrowth Village 🚀</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🌱 Welcome to MindGrowth Village 🚀</h1>",
+                unsafe_allow_html=True)
 
     st.write("### 🔥 Unleash Your Full Potential with a Growth Mindset!")
     st.write("At **MindGrowth Village**, we believe in continuous learning and self-improvement. Whether you’re looking for daily motivation, challenges, or success stories, you’ve come to the right place.")
@@ -167,13 +172,16 @@ if page == "🏠 Home":
         ("Your only limit is your mind.", "Anonymous"),
         ("Challenges are what make life interesting. Overcoming them is what makes life meaningful.", "Joshua J. Marine"),
         ("Growth and comfort do not coexist.", "Ginni Rometty"),
-        ("Do not be embarrassed by your failures, learn from them and start again.", "Richard Branson"),
+        ("Do not be embarrassed by your failures, learn from them and start again.",
+         "Richard Branson"),
         ("Believe you can and you’re halfway there.", "Theodore Roosevelt")
     ]
     selected_quote, author = random.choice(quotes)
 
-    st.markdown(f"<p class='quote'>“{selected_quote}”</p>", unsafe_allow_html=True)
-    st.markdown(f"<p class='quote-author'>- {author}</p>", unsafe_allow_html=True)
+    st.markdown(
+        f"<p class='quote'>“{selected_quote}”</p>", unsafe_allow_html=True)
+    st.markdown(
+        f"<p class='quote-author'>- {author}</p>", unsafe_allow_html=True)
 
     # Challenge of the Day
     st.subheader("💡 Challenge of the Day")
@@ -200,16 +208,19 @@ if page == "🏠 Home":
     )
 
     # CTA Button
-    st.markdown("<h3 style='text-align: center;'>🚀 Are You Ready to Grow?</h3>", unsafe_allow_html=True)
-    if st.button("Join the MindGrowth Challenge!" ,):
+    st.markdown("<h3 style='text-align: center;'>🚀 Are You Ready to Grow?</h3>",
+                unsafe_allow_html=True)
+    if st.button("Join the MindGrowth Challenge!",):
         st.success("You're on your way to an amazing transformation! 🎉")
-        st.image("https://miro.medium.com/v2/resize:fit:1100/format:webp/1*aFtggN7wbeBIKCN5i3kTdw.png", width=200)  # Replace with an actual banner image
+        # Replace with an actual banner image
+        st.image(
+            "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*aFtggN7wbeBIKCN5i3kTdw.png", width=200)
 
 
 # Upload & Process Data Page
 elif page == "📂 Data Sweeper":
     st.balloons()
-       # Custom CSS for a visually appealing UI
+    # Custom CSS for a visually appealing UI
     st.markdown("""
         <style>
             .main-title {
@@ -256,8 +267,10 @@ elif page == "📂 Data Sweeper":
     """, unsafe_allow_html=True)
 
     # Title Section
-    st.markdown("<h1 class='main-title'>🚀 Welcome to Data Sweeper</h1>", unsafe_allow_html=True)
-    st.markdown("<p class='subheader'>Transform Your Data with Ease!</p>", unsafe_allow_html=True)
+    st.markdown("<h1 class='main-title'>🚀 Welcome to Data Sweeper</h1>",
+                unsafe_allow_html=True)
+    st.markdown("<p class='subheader'>Transform Your Data with Ease!</p>",
+                unsafe_allow_html=True)
 
     st.write("""
     Data Sweeper is a powerful yet simple tool that helps you **clean, analyze, and convert CSV & Excel files effortlessly.**  
@@ -267,7 +280,8 @@ elif page == "📂 Data Sweeper":
     st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
 
     # 📌 Why Use Data Sweeper?
-    st.markdown("<h2 class='section-title'>💡 Why Use Data Sweeper?</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 class='section-title'>💡 Why Use Data Sweeper?</h2>",
+                unsafe_allow_html=True)
     st.write("""
     ✔ **Save Time** – Automate data cleaning and processing.  
     ✔ **Reduce Errors** – Ensure accurate, structured data.  
@@ -278,7 +292,8 @@ elif page == "📂 Data Sweeper":
     st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
 
     # 🛠️ How It Works?
-    st.markdown("<h2 class='section-title'>📌 How It Works?</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 class='section-title'>📌 How It Works?</h2>",
+                unsafe_allow_html=True)
     st.write("""
     1️⃣ **Upload your CSV or Excel file**  
     2️⃣ **Data Sweeper processes it instantly**  
@@ -289,11 +304,11 @@ elif page == "📂 Data Sweeper":
     st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
 
     # 📊 Upload & Process Data Section
-    st.markdown("<h2 class='main-title'>📊 Upload & Process Your Data</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 class='main-title'>📊 Upload & Process Your Data</h2>",
+                unsafe_allow_html=True)
 
-    
-    
-    upload_files = st.file_uploader(" 📂 Upload your files (CSV or Excel):", type=["csv", "xlsx"], accept_multiple_files=True)
+    upload_files = st.file_uploader(" 📂 Upload your files (CSV or Excel):", type=[
+                                    "csv", "xlsx"], accept_multiple_files=True)
 
     if upload_files:
         for file in upload_files:
@@ -317,8 +332,6 @@ elif page == "📂 Data Sweeper":
             # Data Cleaning Options
             st.subheader("🛠 Data Cleaning Options")
             col1, col2 = st.columns(2)
-            
-            
 
             with col1:
                 if st.button(f"Remove Duplicates from {file.name}"):
@@ -328,12 +341,14 @@ elif page == "📂 Data Sweeper":
             with col2:
                 if st.button(f"Fill Missing Values for {file.name}"):
                     numeric_cols = df.select_dtypes(include=('number')).columns
-                    df[numeric_cols] = df[numeric_cols].fillna(df[numeric_cols].mean())
+                    df[numeric_cols] = df[numeric_cols].fillna(
+                        df[numeric_cols].mean())
                     st.success("✅ Missing Values Filled!")
 
             # Column Selection
             st.subheader("🔄 Select Columns to Keep")
-            columns = st.multiselect(f"Choose columns for {file.name}", df.columns, default=df.columns)
+            columns = st.multiselect(
+                f"Choose columns for {file.name}", df.columns, default=df.columns)
             df = df[columns]
 
             # Data Visualization
@@ -343,10 +358,12 @@ elif page == "📂 Data Sweeper":
 
             # File Conversion
             st.subheader("🔄 Convert Your File")
-            conversion_type = st.radio(f"Convert {file.name} to:", ['CSV', 'Excel'], key=file.name)
+            conversion_type = st.radio(f"Convert {file.name} to:", [
+                                       'CSV', 'Excel'], key=file.name)
             if st.button(f"Convert {file.name}"):
                 buffer = BytesIO()
-                file_name = file.name.replace(files_ext, '.csv' if conversion_type == 'CSV' else '.xlsx')
+                file_name = file.name.replace(
+                    files_ext, '.csv' if conversion_type == 'CSV' else '.xlsx')
                 mime_type = 'text/csv' if conversion_type == 'CSV' else 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                 df.to_csv(buffer, index=False)
                 buffer.seek(0)
@@ -361,22 +378,22 @@ elif page == "📂 Data Sweeper":
 
             st.success("🎉 All Files Processed Successfully!")
 
-tasks=[]
+tasks = []
 if page == "📝 To-Do List":
     st.title("📝 To-Do List")
     new_task = st.text_input("Add a task:")
     if st.button("Add Task") and new_task:
         tasks.append(new_task)
-    
+
     if tasks:
         for i, task in enumerate(tasks):
             st.checkbox(task, key=i)
 
     st.write("🔜 More features coming soon! Stay tuned for updates.")
 
-# Chat Bot 
-elif page ==  '🤖 AI Chatbot':
-    
+# Chat Bot
+elif page == '🤖 AI Chatbot':
+
     GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
     # Set up Google Gemini-Pro AI model
@@ -420,7 +437,8 @@ elif page ==  '🤖 AI Chatbot':
     """, unsafe_allow_html=True)
 
     # 🌟 Enhanced Title and Subtitle
-    st.markdown("<h1 class='title'>🤖 Gemini AI - Your Smart Assistant</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='title'>🤖 Gemini AI - Your Smart Assistant</h1>",
+                unsafe_allow_html=True)
     st.markdown("""
         <p class='subtitle'>
             Welcome to <b>Gemini AI ChatBot</b>!  
@@ -441,15 +459,16 @@ elif page ==  '🤖 AI Chatbot':
         st.chat_message("user").markdown(user_prompt)
 
         # Send user's message to Gemini-Pro and get the response
-        gemini_response = st.session_state.chat_session.send_message(user_prompt)
+        gemini_response = st.session_state.chat_session.send_message(
+            user_prompt)
 
         # Display Gemini-Pro's response
         with st.chat_message("assistant"):
             st.markdown(gemini_response.text)
-            
+
     # 🌱 Extra Motivation Section
     st.divider()
-  
+
 
 # About Page
 elif page == "ℹ️ About":
@@ -461,7 +480,7 @@ elif page == "ℹ️ About":
     st.write("✅ Select specific columns for conversion")
     st.write("✅ Visualize data with built-in charts")
     st.write("✅ Convert files between CSV & Excel formats")
-    
+
     st.title("📢 About AI Chatbot")
     st.write("The AI Chatbot, powered by **Google Gemini-Pro AI**, is designed to assist you with intelligent conversations. Whether you need help with coding, writing, or general inquiries, the chatbot is here to provide accurate and helpful responses.")
     st.subheader("💡 Features:")
@@ -477,4 +496,5 @@ elif page == "ℹ️ About":
     st.write("✅ Simple and intuitive interface")
 
     st.write("🔜 More features coming soon! Stay tuned for updates.")
-    st.write("\nDeveloped with ❤️ by Kulsoom Adnan for the Mind Growth Village community!")
+    st.write(
+        "\nDeveloped with ❤️ by Kulsoom Adnan for the Mind Growth Village community!")
