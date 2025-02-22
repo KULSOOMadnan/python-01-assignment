@@ -1,2 +1,8 @@
-# .streamlit
-# .env
+# Ignore .streamlit directory
+.streamlit/
+
+# Ignore .env file
+.env
+
+# Ignore .venv directory
+.venv/
