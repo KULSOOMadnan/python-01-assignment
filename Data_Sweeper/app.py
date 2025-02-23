@@ -8,7 +8,7 @@ import google.generativeai as gen_ai
 
 
 # Load environment variables
-load_dotenv()
+load_dotenv('.env')
 
 # Function to get a random motivational quote
 
